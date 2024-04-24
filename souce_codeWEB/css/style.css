@@ -8,7 +8,7 @@
     text-decoration: none;
     border: 0;
     list-style: none;
-    appearance: none;
+
 }
 
 /* ----------------------------------------------- */
@@ -121,8 +121,9 @@ main .insights p{
 main .recent_order{
     margin-top: 2rem;
 }
-main .recent_order h2{
+main .recent_order h1{
     color: #333;
+    margin-bottom: 10px;
 }
 main .recent_order table{
     background-color: #fff;
@@ -398,7 +399,207 @@ nav.open ~ .overlay{
 
 /* -----------------css navbar menu--------------- */
 
+/* ---------------------form_add_seller---------------------- */
+.container_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+.form_container {
+    margin-top: 80px;
+    background-color: white; 
+    padding: 30px;
+    width: 1000px;
+    border-radius: 20px;
+  }
+  
+  .form_title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    background: #4070f4;
+    color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .user_details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .form_input,
+  .gioitinh {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form_input > span.details,
+  .gioitinh > span.label_gioitinh {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #666; 
+  }
+  
+  input[type=text],
+  input[type=date],
+  input[type=file],
+  input[type=email],
+  input[list],
+  textarea,
+  select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  input[type=radio] {
+    margin-right: 5px;
+  }
+  
+  input[type=submit] {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
 
+  }
+  
+  input[type=submit]:hover {
+    background-color: #4cae4c; 
+  }
+
+  input[type=reset] {
+    padding: 10px 20px;
+    background-color: #ea4343; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+
+  }
+  input[type=reset]:hover {
+    background-color: #d73838; 
+  }
+
+  
+/* ---------------------form_add_seller---------------------- */
+
+
+/*----------------------form_create_account-----------------------*/
+.create_account_details{
+    display: grid;
+    grid-gap: 20px;
+    margin-bottom: 20px;
+}
+::selection{
+    color: #fff;
+    background: #4285f4;
+  }
+  .wrapper{
+    width: 100%;
+  }
+  .select-btn{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .select-btn{
+    padding: 10px;
+    font-size: 16px;
+    background: #fff;
+    border-radius: 5px;
+    justify-content: space-between;
+    border:1px solid #ccc;
+  }
+  .select-btn i{
+    font-size: 31px;
+    transition: transform 0.3s linear;
+  }
+  .wrapper.active .select-btn i{
+    transform: rotate(-180deg);
+  }
+  .content{
+    display: none;
+    padding: 10px;
+    margin-top: 15px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  .wrapper.active .content{
+    display: block;
+  }
+  .content .search{
+    position: relative;
+  }
+  .search i{
+    top: 50%;
+    left: 15px;
+    color: #999;
+    font-size: 20px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+  .search input{
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 0 20px 0 43px;
+    border: 1px solid #B3B3B3;
+  }
+  .search input:focus{
+    padding-left: 42px;
+    border: 2px solid #4285f4;
+  }
+  .search input::placeholder{
+    color: #bfbfbf;
+  }
+  .content .options{
+    margin-top: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 7px;
+  }
+  .options::-webkit-scrollbar{
+    width: 7px;
+  }
+  .options::-webkit-scrollbar-track{
+    background: #f1f1f1;
+    border-radius: 25px;
+  }
+  .options::-webkit-scrollbar-thumb{
+    background: #ccc;
+    border-radius: 25px;
+  }
+  .options::-webkit-scrollbar-thumb:hover{
+    background: #b3b3b3;
+  }
+  .options li{
+    height: 50px;
+    padding: 0 13px;
+    font-size: 21px;
+  }
+  .options li:hover, li.selected{
+    border-radius: 5px;
+    background: #f2f2f2;
+  }
+/*----------------------form_create_account-----------------------*/
 
 /* resopndive */
 @media screen and (max-width: 769px) {
@@ -420,6 +621,10 @@ nav.open ~ .overlay{
     }
 }
 
-
+@media (max-width: 768px) {
+    .user_details {
+        grid-template-columns: 1fr;
+    }
+}
 
 
