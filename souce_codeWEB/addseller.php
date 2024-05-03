@@ -1,142 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- head -->
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-
-<body>
-    <div class="container_form">
-        <!--thanh menu-->
-        <nav>
-            <!-- ten web + logo -->
-            <div class = "logo">
-                <i class='bx bx-menu menu-icon' ></i>
-                <span class="logo_name">PhoneS</span>
-            </div>
-
-            <!-- thanh menu -->
-            <div class="sidebar">
-                <div class = "logo">
-                    <i class='bx bx-menu menu-icon' ></i>
-                    <span class="logo_name">PhoneS</span>
-                </div>
-
-                <div class="sidebar-content">
-                    <!-- sidebar body -->
-                    <ul class="lists">
-                        <!-- trang chu -->
-                        <li class="list">
-                            <a href="home.html" class="nav-link">
-                                <i class="bx bx-home-alt icon"></i>
-                                <span class="link">Trang chủ</span>
-                            </a>
-                        </li>
-
-                        <!-- them nhan vien -->
-                        <li class="list">
-                            <a href="#" class="nav-link">
-                                <i class='bx bx-user-plus icon'></i>
-                                <span class="link">Tạo mới nhân viên</span>
-                            </a>
-                        </li>
-
-                        <!-- quan li nhan vien -->
-                        <li class="list list_dropdown">
-                            <a href="#" class="nav-link">
-                                <i class='bx bxs-user-account icon'></i>
-                                <span class="link">Quản lí nhân viên</span>
-                                <i class='bx bx-chevron-down arrow '></i>
-                            </a>
-                            <ul class="list_menu">
-                                <li>
-                                    <a href="createaccount.html" class="nav-link">
-                                        <span class="link">Tạo tài khoản nhân viên</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="listaccount.html" class="nav-link">
-                                        <span class="link">Danh sách tài khoản</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="listseller.html" class="nav-link">
-                                        <span class="link">Danh sách nhân viên</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <!-- san pham -->
-                        <li class="list">
-                            <a href="listproduct.html" class="nav-link">
-                                <i class='bx bxs-package icon'></i>
-                                <span class="link">Danh sách sản phẩm</span>
-                            </a>
-                        </li>
-
-                        <!-- khach hang -->
-                        <li class="list">
-                            <a href="listcustomer.html" class="nav-link">
-                                <i class='bx bxs-id-card icon'></i>
-                                <span class="link">Danh sách khách hàng</span>
-                            </a>
-                        </li>
-
-                        <!-- loi nhuan(chi danh cho admin) -->
-                        <li class="list">
-                            <a href="profit.html" class="nav-link">
-                                <i class='bx bx-money-withdraw icon' ></i>
-                                <span class="link">Lợi nhuận</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- ket thuc sidebar body -->
-        
-                    <!-- sidebar bottom -->
-                    <div class="bottom-content">
-                        <!-- profile-ho so -->
-                        <div class="user">
-                            <div class="user_img">
-                                <img src="image/images.jpg" alt=""/>
-                            </div>
-                            <div class="username">
-                                <p class="name">Duy Huy </p>
-                            </div>
-                        </div>
-                        
-                        <!-- log out -->
-                        <li class="list">
-                            <a href="#" class="nav-link">
-                                <i class='bx bx-log-out icon' ></i>
-                                <span class="link">Đăng xuất</span>
-                            </a>
-                        </li>
-                    </div>
-                    <!-- ket thuc sidebar bottom -->
-                </div>
-            </div>
-            <!-- ket thuc thanh menu -->
-        </nav>
         <!--ket thuc thanh menu-->
+<?php
+?>        
+        
         <div class="form_container">
             <div class="form_title">Thêm mới nhân viên</div>
-            <form id="add_seller_form" action="#">
+            <form action = "index.php?pg=add-staff" method = "post" id="add_seller_form" >
                 <div class="user_details">
                     <div class="form_input">
-                        <span class="details">Họ:</span>
-                        <input type="text" id="ho" placeholder="Họ" required="required">
+                        <span class="details">Họ Tên:</span>
+                        <input type="text" id="ho" name = "staff-name" placeholder="Họ Tên" required="required">
                     </div>
                     <div class="form_input">
                         <span class="details">Tên:</span>
-                        <input type="text" id="ten" placeholder="Tên" required="required">
+                        <input type="email" id="email" name = "staff-email" placeholder="Email" required="required">
                     </div>
-                    <div class="gioitinh">
+                    <!-- <div class="gioitinh">
                         <span class="label_gioitinh">Giới tính:</span>
                         <div class="category">
                             <input type="radio" id="nam" name="gioi_tinh" value="Nam" required>
@@ -144,12 +22,12 @@
                             <input type="radio" id="nu" name="gioi_tinh" value="Nữ">
                             <label for="nu">Nữ</label><br><br>
                         </div>
-                    </div>
-                    <div class="form_input">
+                    </div> -->
+                    <!-- <div class="form_input">
                         <span class="details">Ngày tháng năm sinh:</span>
                         <input type="date" id="ngay_sinh" name="ngay_sinh" required><br><br>
-                    </div>
-                    <div class="form_input">
+                    </div> -->
+                    <!-- <div class="form_input">
                         <span class="details">Nơi sinh:</span>
                         <select id="noi_sinh" name="noi_sinh" required>
                             <option value="" disabled selected>-- Chọn tỉnh/thành phố --</option>
@@ -217,29 +95,29 @@
                             <option value="Yên Bái">Yên Bái</option>
                           </select>
                           
-                    </div>
-                    <div class="form_input">
+                    </div> -->
+                    <!-- <div class="form_input">
                         <span class="details">Số điện thoại:</span>
                         <input type="text" id="Sdt" placeholder="Số điện thoại" required="required">
-                    </div>
-                    <div class="form_input">
+                    </div> -->
+                    <!-- <div class="form_input">
                         <span class="details">Dân tộc:</span>
                         <input type="text" id="dan_toc" placeholder="Dân tộc" required="required">
-                    </div>
-                    <div class="form_input">
+                    </div> -->
+                    <!-- <div class="form_input">
                         <span class="details">Ảnh:</span>
-                        <input type="file" id="anh" name="anh" accept="image/*" required><br><br>
-                    </div>
-                    <div class="form_input">
+                        <input type="file" id="anh" name="fileToUpload" accept="image/*" required><br><br>
+                    </div> -->
+                    <!-- <div class="form_input">
                         <span class="details">Địa chỉ:</span>
                         <textarea id="dia_chi" name="dia_chi" required></textarea><br><br>
-                    </div>
-                    <div class="form_input">
+                    </div> -->
+                    <!-- <div class="form_input">
                         <span class="details">Số CCCD/CMND:</span>
                         <input type="text" id="sothe" placeholder="CCCD/CMND" required="required">
-                    </div>
+                    </div> -->
                     <div class="form_button">
-                        <input type="submit" value="Thêm nhân viên">
+                        <input type="submit" name = "btn-add-staff" value="Thêm nhân viên">
                         <input type="reset" value="Đặt lại">
                     </div>
                     
@@ -251,4 +129,3 @@
     </div>
     <script src="js/homescrip.js"></script>
     <script src="js/seller.js"></script>
-</body>

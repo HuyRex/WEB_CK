@@ -601,6 +601,96 @@ nav.open ~ .overlay{
   }
 /*----------------------form_create_account-----------------------*/
 
+/*----------------------list_product-----------------------*/
+.list_container {
+    margin-top: 50px;
+    width: 100%;
+    overflow-x: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.listtable-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.listtable-header {
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.listtable-row {
+    display: flex;
+}
+
+.listtable-cell {
+    flex: 1;
+    min-width: 110px; /* Điều chỉnh độ rộng tối thiểu của mỗi cột */
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center; /* Căn giữa nội dung của các ô */
+}
+
+.listtable-cell img {
+    max-width: 100%;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.search-box {
+    display: flex;
+}
+
+.search-box input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.search-box button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #0056b3;
+}
+/* CSS for suggestions */
+.suggestions {
+    position: absolute;
+    margin-top: 27px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    background-color: #fff;
+    z-index: 1;
+}
+
+
+.suggestions div {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.suggestions div:hover {
+    background-color: #f2f2f2; /* Change background color on hover */
+}
+
+
+/*----------------------list_product-----------------------*/
+
 /* resopndive */
 @media screen and (max-width: 769px) {
     .container_home {
@@ -626,5 +716,4 @@ nav.open ~ .overlay{
         grid-template-columns: 1fr;
     }
 }
-
 

@@ -55,17 +55,17 @@
                             </a>
                             <ul class="list_menu">
                                 <li>
-                                    <a href="#" class="nav-link">
+                                    <a href="createaccount.html" class="nav-link">
                                         <span class="link">Tạo tài khoản nhân viên</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="listaccount.html" class="nav-link">
+                                    <a href="#" class="nav-link">
                                         <span class="link">Danh sách tài khoản</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="listseller.html" class="nav-link">
+                                    <a href="#" class="nav-link">
                                         <span class="link">Danh sách nhân viên</span>
                                     </a>
                                 </li>
@@ -124,50 +124,62 @@
             <!-- ket thuc thanh menu -->
         </nav>
         <!--ket thuc thanh menu-->
-        <div class="form_container">
-        <div class="form_title">Tạo tài khoản nhân viên</div>
-            <form id="create_account_form" action="#">
-                <div class="create_account_details">
-                        <div class="wrapper">
-                            <div class="select-btn">
-                                <span>Chọn nhân viên</span>
-                                <i class='bx bx-chevron-down'></i>
-                            </div>
-                            <div class="content">
-                              <div class="search">
-                                <i class='bx bx-search' ></i>
-                                <input spellcheck="false" type="text" placeholder="Search">
-                              </div>
-                              <ul class="options"></ul>
-                            </div>
-                        </div>
-                        <div class="form_input">
-                            <span class="details">Họ:</span>
-                            <input type="text" id="ho" placeholder="Họ" required="required">
-                        </div>
-                        <div class="form_input">
-                            <span class="details">Tên:</span>
-                            <input type="text" id="ten" placeholder="Tên" required="required">
-                        </div>
-                        <div class="form_input">
-                            <span class="details">Email:</span>
-                            <input type="Email" id="email" placeholder="Email" required="required">
-                        </div>
-                        <div class="form_input">
-                            <span class="details">Số điện thoại:</span>
-                            <input type="text" id="Sdt" placeholder="Số điện thoại" required="required">
-                        </div>
-                        <div class="form_input">
-                            <span class="details">Mật khẩu:</span>
-                            <input type="text" id="password" placeholder="Mật khẩu" required="required">
-                        </div>
-                        <div class="form_button">
-                             <input type="submit" value="Tạo tài khoản">
-                        </div>
+        <div class="list_container">
+            <div class="listtable-header">
+                <h2>Danh Sách Nhân Viên</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+                    <div class="suggestions" id="suggestions"></div>
+                    <button><i class='bx bx-search'></i></button>
+                </div>
+            </div>
+            
+            <div class="listtable-wrapper">
+                <div class="listtable-headerbody">
+                    <div class="listtable-row">
+                        <div class="listtable-cell">STT</div>
+                        <div class="listtable-cell">Mã nhân viên</div>
+                        <div class="listtable-cell">Ảnh</div>
+                        <div class="listtable-cell">Họ Tên</div>
+                        <div class="listtable-cell">Giới tính</div>
+                        <div class="listtable-cell">Ngày sinh</div>
+                        <div class="listtable-cell">Nơi sinh</div>
+                        <div class="listtable-cell">Số CCCD</div>
+                        <div class="listtable-cell">Trạng thái</div>
                     </div>
                 </div>
-            </form>
+                <div class="listtable-body" id="employeeList">
+                    <!-- Employee entries will be added dynamically here -->
+                    <!-- Example entry -->
+                    <div class="listtable-row">
+                        <div class="listtable-cell">1</div>
+                        <div class="listtable-cell">NV001</div>
+                        <div class="listtable-cell"><img src="image/hung.jpg" alt="Employee Image"></div>
+                        <div class="listtable-cell">Nguyễn Văn Hưng</div>
+                        <div class="listtable-cell">Nam</div>
+                        <div class="listtable-cell">24/02/2004</div>
+                        <div class="listtable-cell">Gia Lai</div>
+                        <div class="listtable-cell">064204001129</div>
+                        <div class="listtable-cell">Kích hoạt</div>
+                    </div>
+
+                    <div class="listtable-row">
+                        <div class="listtable-cell">2</div>
+                        <div class="listtable-cell">NV002</div>
+                        <div class="listtable-cell"><img src="image/nhut.jpg" alt="Employee Image"></div>
+                        <div class="listtable-cell">Nguyễn Minh Nhựt</div>
+                        <div class="listtable-cell">Nam</div>
+                        <div class="listtable-cell">10/12/2004</div>
+                        <div class="listtable-cell">Đồng Tháp</div>
+                        <div class="listtable-cell">064204001127</div>
+                        <div class="listtable-cell">Kích hoạt</div>
+                    </div>
+                    <!-- More entries can be added similarly -->
+                </div>
+            </div>
         </div>
+        
+        
         <section class="overlay"></section>
     </div>
     <script src="js/homescrip.js"></script>

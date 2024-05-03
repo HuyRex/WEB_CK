@@ -6,12 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+<!-- ketthuchead -->
 
+
+<!-- body -->
 <body>
-    <div class="container_form">
+    <div class="container_home">
         <!--thanh menu-->
         <nav>
             <!-- ten web + logo -->
@@ -40,7 +43,7 @@
 
                         <!-- them nhan vien -->
                         <li class="list">
-                            <a href="addseller.html" class="nav-link">
+                            <a href="index.php?pg=addseller" class="nav-link">
                                 <i class='bx bx-user-plus icon'></i>
                                 <span class="link">Tạo mới nhân viên</span>
                             </a>
@@ -55,17 +58,17 @@
                             </a>
                             <ul class="list_menu">
                                 <li>
-                                    <a href="#" class="nav-link">
+                                    <a href="createaccount.html" class="nav-link">
                                         <span class="link">Tạo tài khoản nhân viên</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="listaccount.html" class="nav-link">
+                                    <a href="#" class="nav-link">
                                         <span class="link">Danh sách tài khoản</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="listseller.html" class="nav-link">
+                                    <a href="#" class="nav-link">
                                         <span class="link">Danh sách nhân viên</span>
                                     </a>
                                 </li>
@@ -74,7 +77,7 @@
 
                         <!-- san pham -->
                         <li class="list">
-                            <a href="listproduct.html" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class='bx bxs-package icon'></i>
                                 <span class="link">Danh sách sản phẩm</span>
                             </a>
@@ -82,7 +85,7 @@
 
                         <!-- khach hang -->
                         <li class="list">
-                            <a href="listcustomer.html" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class='bx bxs-id-card icon'></i>
                                 <span class="link">Danh sách khách hàng</span>
                             </a>
@@ -90,7 +93,7 @@
 
                         <!-- loi nhuan(chi danh cho admin) -->
                         <li class="list">
-                            <a href="profit.html" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class='bx bx-money-withdraw icon' ></i>
                                 <span class="link">Lợi nhuận</span>
                             </a>
@@ -123,53 +126,3 @@
             </div>
             <!-- ket thuc thanh menu -->
         </nav>
-        <!--ket thuc thanh menu-->
-        <div class="form_container">
-        <div class="form_title">Tạo tài khoản nhân viên</div>
-            <form id="create_account_form" action="#">
-                <div class="create_account_details">
-                        <div class="wrapper">
-                            <div class="select-btn">
-                                <span>Chọn nhân viên</span>
-                                <i class='bx bx-chevron-down'></i>
-                            </div>
-                            <div class="content">
-                              <div class="search">
-                                <i class='bx bx-search' ></i>
-                                <input spellcheck="false" type="text" placeholder="Search">
-                              </div>
-                              <ul class="options"></ul>
-                            </div>
-                        </div>
-                        <div class="form_input">
-                            <span class="details">Họ:</span>
-                            <input type="text" id="ho" placeholder="Họ" required="required">
-                        </div>
-                        <div class="form_input">
-                            <span class="details">Tên:</span>
-                            <input type="text" id="ten" placeholder="Tên" required="required">
-                        </div>
-                        <div class="form_input">
-                            <span class="details">Email:</span>
-                            <input type="Email" id="email" placeholder="Email" required="required">
-                        </div>
-                        <div class="form_input">
-                            <span class="details">Số điện thoại:</span>
-                            <input type="text" id="Sdt" placeholder="Số điện thoại" required="required">
-                        </div>
-                        <div class="form_input">
-                            <span class="details">Mật khẩu:</span>
-                            <input type="text" id="password" placeholder="Mật khẩu" required="required">
-                        </div>
-                        <div class="form_button">
-                             <input type="submit" value="Tạo tài khoản">
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <section class="overlay"></section>
-    </div>
-    <script src="js/homescrip.js"></script>
-
-</body>
