@@ -14,20 +14,6 @@ overlay.addEventListener("click", ()=> {
     navBar.classList.remove("open");
 });
 //navbar over lay
-
-//list_dropdown
-let dropdown = document.querySelectorAll(".list_dropdown");
-
-for (var i=0;i < dropdown.length;i++){
-    dropdown[i].addEventListener("click",(e)=>{
-    let dropdownParent = e.target.parentElement.parentElement;
-    console.log(dropdownParent);
-    dropdownParent.classList.toggle("showmenu");
-    });
-}
-//list_dropdown
-
-
 //-----------------------------------chung-------------------------------------//
 
 
@@ -35,90 +21,91 @@ for (var i=0;i < dropdown.length;i++){
 
 //-----------------------------------home---------------------------------------//
 //Giới hạn bảng(table) ở home
-// document.addEventListener("DOMContentLoaded", function() {
-//     const showMoreBtn = document.querySelector(".recent_order a");
-//     const closeBtn = document.querySelector(".recent_order a.close");
-//     const tableRows = document.querySelectorAll(".recent_order table tbody tr");
+document.addEventListener("DOMContentLoaded", function() {
+    const showMoreBtn = document.querySelector(".recent_order a");
+    const closeBtn = document.querySelector(".recent_order a.close");
+    const tableRows = document.querySelectorAll(".recent_order table tbody tr");
 
 //     // Số lượng dòng được hiển thị ban đầu
-//     const initialRowCount = 5;
-//     let visibleRowCount = initialRowCount;
+    const initialRowCount = 5;
+    let visibleRowCount = initialRowCount;
 
 //     // Ẩn tất cả các dòng từ dòng thứ visibleRowCount trở đi
-//     for (let i = visibleRowCount; i < tableRows.length; i++) {
-//         tableRows[i].style.display = "none";
-//     }
+    for (let i = visibleRowCount; i < tableRows.length; i++) {
+        tableRows[i].style.display = "none";
+    }
 
 //     // Xử lý sự kiện khi nhấp vào nút "show more"
-//     showMoreBtn.addEventListener("click", function() {
-//         // Hiển thị thêm 5 dòng tiếp theo của bảng
-//         for (let i = visibleRowCount; i < visibleRowCount + 5; i++) {
-//             if (tableRows[i]) {
-//                 tableRows[i].style.display = "table-row";
-//             }
-//         }
+    showMoreBtn.addEventListener("click", function() {
+        // Hiển thị thêm 5 dòng tiếp theo của bảng
+        for (let i = visibleRowCount; i < visibleRowCount + 5; i++) {
+            if (tableRows[i]) {
+                tableRows[i].style.display = "table-row";
+            }
+        }
 
 //         // Cập nhật số lượng dòng được hiển thị
-//         visibleRowCount += 5;
+        visibleRowCount += 5;
 
 //         // Nếu không còn dòng nào được ẩn, ẩn nút "show more" và hiển thị nút "close"
-//         if (visibleRowCount >= tableRows.length) {
-//             showMoreBtn.style.display = "none";
-//             closeBtn.style.display = "inline";
-//         }
-//     });
-// });
+        if (visibleRowCount >= tableRows.length) {
+            showMoreBtn.style.display = "none";
+            closeBtn.style.display = "inline";
+        }
+    });
+});
 // giới hạn bảng
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Kiểm tra nếu người dùng chưa đổi mật khẩu, hiển thị form đổi mật khẩu
+    if (!hasChangedPassword()) {
+        var changePasswordForm = document.getElementById("changePasswordForm");
+        changePasswordForm.style.display = "block";
+    }
+
+    // Xử lý sự kiện khi người dùng gửi form đổi mật khẩu
+    var passwordForm = document.getElementById("passwordForm");
+    passwordForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Ngăn chặn gửi form mặc định
+
+        // Lấy giá trị từ các trường input
+        var currentPassword = document.getElementById("currentPassword").value;
+        var newPassword = document.getElementById("newPassword").value;
+        var confirmNewPassword = document.getElementById("confirmNewPassword").value;
+
+        // Kiểm tra xem mật khẩu mới và xác nhận mật khẩu mới có khớp nhau không
+        if (newPassword !== confirmNewPassword) {
+            alert("Mật khẩu mới và xác nhận mật khẩu mới không khớp.");
+            return;
+        }
+
+        // Thực hiện xử lý đổi mật khẩu, ví dụ: gửi yêu cầu đổi mật khẩu đến máy chủ
+        // Sau khi xử lý thành công, ẩn form đổi mật khẩu
+        hideChangePasswordForm();
+    });
+});
+
+// Hàm kiểm tra xem người dùng đã đổi mật khẩu hay chưa (giả sử là một hàm tùy chỉnh)
+function hasChangedPassword() {
+    // Thực hiện kiểm tra, ví dụ: kiểm tra trong cơ sở dữ liệu hoặc lưu trữ cục bộ
+    // Trong trường hợp này, chỉ đơn giản trả về một giá trị giả định
+    return false; // Giả sử người dùng chưa đổi mật khẩu
+}
+
+// Hàm ẩn form đổi mật khẩu
+function hideChangePasswordForm() {
+    var changePasswordForm = document.getElementById("changePasswordForm");
+    changePasswordForm.style.display = "none";
+}
+
+
+
+
 
 //-----------------------------------home---------------------------------------//
 
 
-//------------------------------------thêm nhân viên-----------------------------//
 
-// const wrapper = document.querySelector(".wrapper"),
-// selectBtn = wrapper.querySelector(".select-btn"),
-// searchInp = wrapper.querySelector("input"),
-// options = wrapper.querySelector(".options");
-
-// let countries = ["Afghanistan", "Algeria", "Argentina", "Australia", "Bangladesh", "Belgium", "Bhutan",
-//                  "Brazil", "Canada", "China", "Denmark", "Ethiopia", "Finland", "France", "Germany",
-//                  "Hungary", "Iceland", "India", "Indonesia", "Iran", "Italy", "Japan", "Malaysia",
-//                  "Maldives", "Mexico", "Morocco", "Nepal", "Netherlands", "Nigeria", "Norway", "Pakistan",
-//                  "Peru", "Russia", "Romania", "South Africa", "Spain", "Sri Lanka", "Sweden", "Switzerland",
-//                  "Thailand", "Turkey", "Uganda", "Ukraine", "United States", "United Kingdom", "Vietnam"];
-
-// function addCountry(selectedCountry) {
-//     options.innerHTML = "";
-//     countries.forEach(country => {
-//         let isSelected = country == selectedCountry ? "selected" : "";
-//         let li = `<li onclick="updateName(this)" class="${isSelected}">${country}</li>`;
-//         options.insertAdjacentHTML("beforeend", li);
-//     });
-// }
-// addCountry();
-
-// function updateName(selectedLi) {
-//     searchInp.value = "";
-//     addCountry(selectedLi.innerText);
-//     wrapper.classList.remove("active");
-//     selectBtn.firstElementChild.innerText = selectedLi.innerText;
-// }
-
-// searchInp.addEventListener("keyup", () => {
-//     let arr = [];
-//     let searchWord = searchInp.value.toLowerCase();
-//     arr = countries.filter(data => {
-//         return data.toLowerCase().startsWith(searchWord);
-//     }).map(data => {
-//         let isSelected = data == selectBtn.firstElementChild.innerText ? "selected" : "";
-//         return `<li onclick="updateName(this)" class="${isSelected}">${data}</li>`;
-//     }).join("");
-//     options.innerHTML = arr ? arr : `<p style="margin-top: 10px;">Oops! Country not found</p>`;
-// });
-
-// selectBtn.addEventListener("click", () => wrapper.classList.toggle("active"));
-
-//------------------------------------thêm nhân viên-----------------------------//
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchInput");
     const suggestions = document.getElementById("suggestions");

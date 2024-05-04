@@ -344,7 +344,7 @@ nav.open .sidebar{
     background-color: rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
     pointer-events: none;
-    z-index: 999;
+    z-index: 997;
 }
 nav.open ~ .overlay{
     left: 260px;
@@ -391,13 +391,46 @@ nav.open ~ .overlay{
     width: 100%;
     object-fit: cover;
 }
-.user .name{
-    font-size: 16px;
-    color: #707070;
-    font-weight: 400;
+.username{
+    margin-left: 10px;
 }
 
 /* -----------------css navbar menu--------------- */
+
+/* CSS cho form đổi mật khẩu */
+
+/* CSS cho form đổi mật khẩu */
+.change-password-form {
+    background-color: #fff; /* Màu nền của form */
+    padding: 20px;
+    border-radius: 5px;
+    position: fixed;
+    top: 50%; /* Đưa form vào giữa màn hình theo chiều dọc */
+    left: 50%; /* Đưa form vào giữa màn hình theo chiều ngang */
+    transform: translate(-50%, -50%);
+    z-index: 999; /* Đảm bảo form hiển thị trên tất cả các phần tử khác */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ */
+}
+
+/* CSS cho các ô input và nút bấm của form */
+.change-password-form input[type="text"],
+.change-password-form input[type="password"],
+.change-password-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* CSS cho body khi form đổi mật khẩu hiển thị */
+body.modal-open {
+    overflow: hidden; /* Ngăn cuộn trang khi form hiển thị */
+}
+
+
+
+
 
 /* ---------------------form_add_seller---------------------- */
 .container_form{
@@ -601,7 +634,7 @@ nav.open ~ .overlay{
   }
 /*----------------------form_create_account-----------------------*/
 
-/*----------------------list_product-----------------------*/
+/*----------------------list_seller-----------------------*/
 .list_container {
     margin-top: 50px;
     width: 100%;
@@ -689,7 +722,103 @@ nav.open ~ .overlay{
 }
 
 
-/*----------------------list_product-----------------------*/
+/*----------------------list_seller-----------------------*/
+
+/*----------------------profile-----------------------*/
+.btn-default {
+    border-color: rgba(24, 28, 33, 0.1);
+    background  : rgba(0, 0, 0, 0);
+    color       : #4E5155;
+}
+
+label.btn {
+    margin-bottom: 0;
+}
+
+.btn-outline-primary {
+    border-color: #26B4FF;
+    background  : transparent;
+    color       : #26B4FF;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.text-light {
+    color: #babbbc !important;
+}
+
+.card {
+    background-clip: padding-box;
+    box-shadow     : 0 1px 4px rgba(24, 28, 33, 0.012);
+}
+
+.row-bordered {
+    overflow: hidden;
+}
+
+.account-settings-fileinput {
+    position  : absolute;
+    visibility: hidden;
+    width     : 1px;
+    height    : 1px;
+    opacity   : 0;
+}
+
+.account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+}
+
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent !important;
+}
+
+.account-settings-multiselect~.select2-container {
+    width: 100% !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.material-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.material-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.dark-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark-style .account-settings-links .list-group-item.active {
+    color: #fff !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4E5155 !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+.ui-w-80 {
+    width : 80px !important;
+    height: auto;
+}
+
+/*----------------------profile-----------------------*/
 
 /* resopndive */
 @media screen and (max-width: 769px) {

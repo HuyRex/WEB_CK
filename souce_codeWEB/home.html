@@ -50,30 +50,12 @@
                             </a>
                         </li>
 
-                        <!-- quan li nhan vien -->
-                        <li class="list list_dropdown">
+                        <!-- dstk -->
+                        <li class="list">
                             <a href="#" class="nav-link">
-                                <i class='bx bxs-user-account icon'></i>
-                                <span class="link">Quản lí nhân viên</span>
-                                <i class='bx bx-chevron-down arrow '></i>
+                                <i class='bx bx-notepad icon'></i>
+                                <span class="link">Danh sách tài khoản</span>
                             </a>
-                            <ul class="list_menu">
-                                <li>
-                                    <a href="createaccount.html" class="nav-link">
-                                        <span class="link">Tạo tài khoản nhân viên</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="listseller.html" class="nav-link">
-                                        <span class="link">Danh sách tài khoản</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link">
-                                        <span class="link">Danh sách nhân viên</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
                         <!-- san pham -->
@@ -105,18 +87,20 @@
                     <!-- sidebar bottom -->
                     <div class="bottom-content">
                         <!-- profile-ho so -->
-                        <div class="user">
-                            <div class="user_img">
-                                <img src="image/images.jpg" alt=""/>
-                            </div>
-                            <div class="username">
-                                <p class="name">Duy Huy </p>
-                            </div>
+                        <div class="list">
+                            <a href="profile.html" class="nav-link">
+                                <div class="user_img">
+                                    <img src="image/nhut.jpg" alt=""/>
+                                </div>
+                                <div class="username">
+                                    <p class="link">Nguyễn Minh Nhựt </p>
+                                </div>
+                            </a>
                         </div>
                         
                         <!-- log out -->
                         <li class="list">
-                            <a href="#" class="nav-link">
+                            <a href="login.html" class="nav-link">
                                 <i class='bx bx-log-out icon' ></i>
                                 <span class="link">Đăng xuất</span>
                             </a>
@@ -412,6 +396,27 @@
             </div>
         </div>
         <!--ket thuc thong bao theo ngay-->
+        
+        <!-- Form đổi mật khẩu -->
+        <div id="changePasswordForm" class="change-password-form">
+            <h2>Đổi mật khẩu</h2>
+            <form id="passwordForm">
+                <div class="form-group">
+                    <label for="currentPassword">Mật khẩu hiện tại:</label>
+                    <input type="password" class="form-control" id="currentPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">Mật khẩu mới:</label>
+                    <input type="password" class="form-control" id="newPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmNewPassword">Xác nhận mật khẩu mới:</label>
+                    <input type="password" class="form-control" id="confirmNewPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+            </form>
+        </div>
+
     <section class="overlay"></section>
     </div>
     

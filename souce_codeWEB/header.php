@@ -49,32 +49,13 @@
                             </a>
                         </li>
 
-                        <!-- quan li nhan vien -->
-                        <li class="list list_dropdown">
+                        <!-- dstk -->
+                        <li class="list">
                             <a href="#" class="nav-link">
-                                <i class='bx bxs-user-account icon'></i>
-                                <span class="link">Quản lí nhân viên</span>
-                                <i class='bx bx-chevron-down arrow '></i>
+                                <span class="link">Danh sách tài khoản</span>
                             </a>
-                            <ul class="list_menu">
-                                <li>
-                                    <a href="createaccount.html" class="nav-link">
-                                        <span class="link">Tạo tài khoản nhân viên</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link">
-                                        <span class="link">Danh sách tài khoản</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link">
-                                        <span class="link">Danh sách nhân viên</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
-
+                    
                         <!-- san pham -->
                         <li class="list">
                             <a href="#" class="nav-link">
