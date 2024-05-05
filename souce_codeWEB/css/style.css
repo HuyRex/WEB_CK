@@ -634,7 +634,63 @@ body.modal-open {
   }
 /*----------------------form_create_account-----------------------*/
 
-/*----------------------list_seller-----------------------*/
+/*----------------------list seller-----------------------*/
+.lock-employee-btn {
+    background-color: red;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.lock-employee-btn:hover {
+    background-color: rgb(190, 26, 26);
+}
+
+.unlock-employee-btn {
+    background-color: rgb(5, 177, 5);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.unlock-employee-btn:hover {
+    background-color: rgb(4, 142, 4);
+}
+
+.create-employee-btn {
+    float: right;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.create-employee-btn:hover {
+    background-color: #0056b3;
+}
+
+.send-email-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.send-email-btn:hover {
+    background-color: #0056b3;
+}
+
 .list_container {
     margin-top: 50px;
     width: 100%;
@@ -664,10 +720,11 @@ body.modal-open {
 
 .listtable-cell {
     flex: 1;
-    min-width: 110px; /* Điều chỉnh độ rộng tối thiểu của mỗi cột */
+    min-width: 70px; /* Điều chỉnh độ rộng tối thiểu của mỗi cột */
     padding: 8px;
     border: 1px solid #ccc;
     text-align: center; /* Căn giữa nội dung của các ô */
+    word-wrap: break-word;
 }
 
 .listtable-cell img {
@@ -700,29 +757,7 @@ body.modal-open {
 .search-box button:hover {
     background-color: #0056b3;
 }
-/* CSS for suggestions */
-.suggestions {
-    position: absolute;
-    margin-top: 27px;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
-    background-color: #fff;
-    z-index: 1;
-}
-
-
-.suggestions div {
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.suggestions div:hover {
-    background-color: #f2f2f2; /* Change background color on hover */
-}
-
-
-/*----------------------list_seller-----------------------*/
+/*----------------------list seller-----------------------*/
 
 /*----------------------profile-----------------------*/
 .btn-default {
@@ -819,6 +854,7 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
 }
 
 /*----------------------profile-----------------------*/
+
 
 /* resopndive */
 @media screen and (max-width: 769px) {

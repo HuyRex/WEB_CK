@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -127,11 +128,6 @@
         <div class="list_container">
             <div class="listtable-header">
                 <h2>Danh Sách Nhân Viên</h2>
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Tìm kiếm...">
-                    <div class="suggestions" id="suggestions"></div>
-                    <button><i class='bx bx-search'></i></button>
-                </div>
             </div>
             
             <div class="listtable-wrapper">
@@ -144,8 +140,10 @@
                         <div class="listtable-cell">Giới tính</div>
                         <div class="listtable-cell">Ngày sinh</div>
                         <div class="listtable-cell">Nơi sinh</div>
-                        <div class="listtable-cell">Số CCCD</div>
+                        <div class="listtable-cell">Email</div>
                         <div class="listtable-cell">Trạng thái</div>
+                        <div class="listtable-cell">Gửi Email</div>
+                        <div class="listtable-cell"></div> <!-- New column -->
                     </div>
                 </div>
                 <div class="listtable-body" id="employeeList">
@@ -159,10 +157,16 @@
                         <div class="listtable-cell">Nam</div>
                         <div class="listtable-cell">24/02/2004</div>
                         <div class="listtable-cell">Gia Lai</div>
-                        <div class="listtable-cell">064204001129</div>
+                        <div class="listtable-cell">nguyenvanhungdm6@gmail.com</div>
                         <div class="listtable-cell">Kích hoạt</div>
+                        <div class="listtable-cell">
+                            <button class="send-email-btn">Gửi</button> <!-- Button for sending email -->
+                        </div>
+                        <div class="listtable-cell">
+                            <button class="lock-employee-btn">Khóa tài khoản</button> <!-- Button for deleting -->
+                        </div>
                     </div>
-
+                
                     <div class="listtable-row">
                         <div class="listtable-cell">2</div>
                         <div class="listtable-cell">NV002</div>
@@ -171,13 +175,26 @@
                         <div class="listtable-cell">Nam</div>
                         <div class="listtable-cell">10/12/2004</div>
                         <div class="listtable-cell">Đồng Tháp</div>
-                        <div class="listtable-cell">064204001127</div>
-                        <div class="listtable-cell">Kích hoạt</div>
+                        <div class="listtable-cell">nguyenminhnhut@gmail.com</div>
+                        <div class="listtable-cell">Khóa</div>
+                        <div class="listtable-cell">
+                            <button class="send-email-btn">Gửi</button> <!-- Button for sending email -->
+                        </div>
+                        <div class="listtable-cell">
+                            <button class="lock-employee-btn">Khóa tài khoản</button> <!-- Button for deleting -->
+                        </div>
                     </div>
                     <!-- More entries can be added similarly -->
                 </div>
             </div>
+            <a href="addseller.html">
+                <button class="create-employee-btn">Tạo mới nhân viên</button>
+            </a>
+            
         </div>
+        
+        
+        
         
         
         <section class="overlay"></section>

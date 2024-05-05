@@ -189,4 +189,69 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+//---------------------------------------list seller------------------------------------------//
+document.addEventListener("DOMContentLoaded", function() {
+    const listContainer = document.querySelector(".list_container");
+
+    // Event delegation for lock and unlock buttons
+    listContainer.addEventListener("click", function(event) {
+        const target = event.target;
+
+        // Check if the clicked element is a lock or unlock button
+        if (target.classList.contains("lock-employee-btn")) {
+            const confirmation = confirm("Bạn có chắc chắn muốn khóa tài khoản không?");
+            if (confirmation) {
+                // Change button text and color to indicate account is locked
+                target.textContent = "Mở khóa tài khoản";
+                target.classList.remove("lock-employee-btn");
+                target.classList.add("unlock-employee-btn");
+            }
+        } else if (target.classList.contains("unlock-employee-btn")) {
+            const confirmation = confirm("Bạn có chắc chắn muốn mở khóa tài khoản không?");
+            if (confirmation) {
+                // Change button text and color to indicate account is unlocked
+                target.textContent = "Khóa tài khoản";
+                target.classList.remove("unlock-employee-btn");
+                target.classList.add("lock-employee-btn");
+            }
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const sendEmailButtons = document.querySelectorAll(".send-email-btn");
+
+    sendEmailButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const confirmation = confirm("Bạn có chắc chắn muốn gửi email không?");
+            if (confirmation) {
+                // Change button appearance to indicate email is being sent
+                button.textContent = "Đang gửi...";
+                button.disabled = true; // Disable button during email sending
+
+                // Start countdown timer for 1 minute
+                let seconds = 60;
+                const timerInterval = setInterval(function() {
+                    seconds--;
+                    button.textContent = "Gửi sau " + seconds + " giây";
+                    
+
+                    if (seconds <= 0) {
+                        clearInterval(timerInterval);
+                        button.textContent = "Gửi";
+                        button.disabled = false; // Re-enable button
+                        button.style.backgroundColor = "#007bff"; // Revert color
+                    } else {
+                        button.style.backgroundColor = "#0056b3"; // Change color during countdown
+                    }
+                }, 1000);
+            }
+        });
+    });
+});
+
+
+
+
+
 

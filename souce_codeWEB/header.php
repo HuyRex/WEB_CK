@@ -85,18 +85,19 @@
                     <!-- sidebar bottom -->
                     <div class="bottom-content">
                         <!-- profile-ho so -->
-                        <div class="user">
-                            <div class="user_img">
-                                <img src="image/images.jpg" alt=""/>
-                            </div>
-                            <div class="username">
-                                <p class="name">Duy Huy </p>
-                            </div>
+                        <div class="list">
+                            <a href="profile.html" class="nav-link">
+                                <div class="user_img">
+                                    <img src="image/nhut.jpg" alt=""/>
+                                </div>
+                                <div class="username">
+                                    <p class="link">Nguyễn Minh Nhựt </p>
+                                </div>
+                            </a>
                         </div>
-                        
                         <!-- log out -->
                         <li class="list">
-                            <a href="#" class="nav-link">
+                            <a href="login.html" class="nav-link">
                                 <i class='bx bx-log-out icon' ></i>
                                 <span class="link">Đăng xuất</span>
                             </a>
