@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="framework/bootstrap.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container_form">
+        <!--thanh menu-->
+        <nav>
+            <!-- ten web + logo -->
+            <div class = "logo">
+                <i class='bx bx-menu menu-icon' ></i>
+                <span class="logo_name">PhoneS</span>
+            </div>
+
+            <!-- thanh menu -->
+            <div class="sidebar">
+                <div class = "logo">
+                    <i class='bx bx-menu menu-icon' ></i>
+                    <span class="logo_name">PhoneS</span>
+                </div>
+
+                <div class="sidebar-content">
+                    <!-- sidebar body -->
+                    <ul class="lists">
+                        <!-- trang chu -->
+                        <li class="list">
+                            <a href="home.html" class="nav-link">
+                                <i class="bx bx-home-alt icon"></i>
+                                <span class="link">Trang chủ</span>
+                            </a>
+                        </li>
+
+                        <!-- them nhan vien -->
+                        <li class="list">
+                            <a href="addseller.html" class="nav-link">
+                                <i class='bx bx-user-plus icon'></i>
+                                <span class="link">Tạo mới nhân viên</span>
+                            </a>
+                        </li>
+
+                        <!-- quan li nhan vien -->
+                        <li class="list list_dropdown">
+                            <a href="#" class="nav-link">
+                                <i class='bx bxs-user-account icon'></i>
+                                <span class="link">Quản lí nhân viên</span>
+                                <i class='bx bx-chevron-down arrow '></i>
+                            </a>
+                            <ul class="list_menu">
+                                <li>
+                                    <a href="#" class="nav-link">
+                                        <span class="link">Tạo tài khoản nhân viên</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="listaccount.html" class="nav-link">
+                                        <span class="link">Danh sách tài khoản</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="listseller.html" class="nav-link">
+                                        <span class="link">Danh sách nhân viên</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- san pham -->
+                        <li class="list">
+                            <a href="listproduct.html" class="nav-link">
+                                <i class='bx bxs-package icon'></i>
+                                <span class="link">Danh sách sản phẩm</span>
+                            </a>
+                        </li>
+
+                        <!-- khach hang -->
+                        <li class="list">
+                            <a href="listcustomer.html" class="nav-link">
+                                <i class='bx bxs-id-card icon'></i>
+                                <span class="link">Danh sách khách hàng</span>
+                            </a>
+                        </li>
+
+                        <!-- loi nhuan(chi danh cho admin) -->
+                        <li class="list">
+                            <a href="profit.html" class="nav-link">
+                                <i class='bx bx-money-withdraw icon' ></i>
+                                <span class="link">Lợi nhuận</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- ket thuc sidebar body -->
+        
+                    <!-- sidebar bottom -->
+                    <div class="bottom-content">
+                        <!-- profile-ho so -->
+                        <div class="user">
+                            <div class="user_img">
+                                <img src="image/images.jpg" alt=""/>
+                            </div>
+                            <div class="username">
+                                <p class="name">Duy Huy </p>
+                            </div>
+                        </div>
+                        
+                        <!-- log out -->
+                        <li class="list">
+                            <a href="#" class="nav-link">
+                                <i class='bx bx-log-out icon' ></i>
+                                <span class="link">Đăng xuất</span>
+                            </a>
+                        </li>
+                    </div>
+                    <!-- ket thuc sidebar bottom -->
+                </div>
+            </div>
+            <!-- ket thuc thanh menu -->
+        </nav>
+        <!--ket thuc thanh menu-->
+        <section class="container_edit p-3 bg-light mt-5 rounded-3">
+            <h3>Danh sách hàng hóa</h3>
+            
+    
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-striped table-hover mt-3 text-center table-bordered">
+    
+                        <thead>
+                            <th>STT</th>
+                            <th>Mã sản phẩm</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Ảnh sản phẩm</th>
+                            <th>Giá nhập(trăm ngàn VND)</th>
+                            <th>Giá bán(trăm ngàn VND)</th>
+                            <th>Danh mục</th>
+                            <th>Ngày tạo</th>
+                            <th>Thao tác</th>
+                        </thead>
+                        
+    
+                        <tbody id="data"></tbody>
+    
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-primary newUser" data-bs-toggle="modal" data-bs-target="#userForm">Thêm hàng hóa <i class='bx bxs-add-to-queue' ></i></button>
+                </div>    
+            </div>
+        </section>
+    
+    
+        <!--Modal Form-->
+        <div class="modal fade" id="userForm">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title">Thêm sản phẩm</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <form action="#" id="myForm">
+
+                            <div class="card imgholder">
+                                <label for="imgInput" class="upload">
+                                    <input type="file" name="" id="imgInput">
+                                    <i class='bx bx-plus-circle'></i>
+                                </label>
+                                <img src="" alt="" width="200" height="200" class="img">
+                            </div>
+
+                            <div class="inputField">
+                                <div>
+                                    <label for="code">Mã sản phẩm:</label>
+                                    <input type="text" name="" id="code" >
+                                </div>
+                                <div>
+                                    <label for="name">Tên sản phẩm:</label>
+                                    <input type="text" name="" id="name" required>
+                                </div>
+                                <div>
+                                    <label for="importPrice">Giá nhập:</label>
+                                    <input type="number" name="" id="importPrice" required>
+                                </div>
+                                <div>
+                                    <label for="salePrice">Giá bán:</label>
+                                    <input type="number" name="" id="salePrice" required>
+                                </div>
+                                <div>
+                                    <label for="category">Danh mục:</label>
+                                    <select id="category" required>
+                                        <option value="">Chọn danh mục</option>
+                                        <option value="Điện thoại">Điện thoại</option>
+                                        <option value="Phụ kiện">Phụ kiện</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="createDate">Ngày tạo:</label>
+                                    <input type="date" name="" id="createDate" required>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
+                        <button type="submit" form="myForm" class="btn btn-primary submit">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Read Data Modal-->
+        <div class="modal fade" id="readData">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title">Thông tin</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <form action="#" id="myReadForm">
+
+                            <div class="card imgholder">
+                                <img src="./image/DefaultImage.webp" alt="" width="200" height="200" class="showImg">
+                            </div>
+
+                            <div class="inputField">
+                                <div>
+                                    <label for="code">Mã sản phẩm:</label>
+                                    <input type="text" name="" id="showCode" disabled>
+                                </div>
+                                <div>
+                                    <label for="name">Tên sản phẩm:</label>
+                                    <input type="text" name="" id="showName" disabled>
+                                </div>
+                                <div>
+                                    <label for="importPrice">Giá nhập:</label>
+                                    <input type="number" name="" id="showImportPrice" oninput="validateNumberInput(this)" required>
+                                </div>
+                                <div>
+                                    <label for="salePrice">Giá bán:</label>
+                                    <input type="number" name="" id="showSalePrice" oninput="validateNumberInput(this)" required>
+                                </div>                                
+                                <div>
+                                    <label for="category">Danh mục:</label>
+                                    <input type="text" name="" id="showCategory" disabled>
+                                </div>
+                                <div>
+                                    <label for="createDate">Ngày tạo:</label>
+                                    <input type="text" name="" id="showCreateDate" disabled>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        
+    
+        <section class="overlay"></section>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <h1>Web quản lí cửa hàng bán điện thoại</h1>
+            <h1>Nhóm 19- Nhóm 24</h1>
+        </div>
+    </footer>
+    
+    <script src="js/homescrip.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>

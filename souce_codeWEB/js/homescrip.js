@@ -254,4 +254,158 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+var form = document.getElementById("myForm"),
+    imgInput = document.querySelector(".img"),
+    file = document.getElementById("imgInput"),
+    productCode = document.getElementById("code"),
+    productName = document.getElementById("name"),
+    importPrice = document.getElementById("importPrice"),
+    salePrice = document.getElementById("salePrice"),
+    category = document.getElementById("category"),
+    createDate = document.getElementById("createDate"),
+    submitBtn = document.querySelector(".submit"),
+    productList = document.getElementById("data"),
+    modal = document.getElementById("userForm"),
+    modalTitle = document.querySelector("#userForm .modal-title"),
+    newProductBtn = document.querySelector(".newUser");
 
+let getData = localStorage.getItem('productList') ? JSON.parse(localStorage.getItem('productList')) : [];
+
+let isEdit = false, editId;
+showProducts();
+
+newProductBtn.addEventListener('click', ()=> {
+    submitBtn.innerText = 'Lưu',
+    modalTitle.innerText = "Thêm sản phẩm"
+    isEdit = false
+    imgInput.src = "image/plus.png"
+    form.reset()
+});
+
+file.onchange = function(){
+    if(file.files[0].size < 1000000){  // 1MB = 1000000
+        var fileReader = new FileReader();
+
+        fileReader.onload = function(e){
+            imgUrl = e.target.result
+            imgInput.src = imgUrl
+        }
+
+        fileReader.readAsDataURL(file.files[0]);
+    }
+    else{
+        alert("Dung lượng ảnh quá lớn!")
+    }
+};
+
+function showProducts(){
+    document.querySelectorAll('.productDetails').forEach(info => info.remove());
+    getData.forEach((element, index) => {
+        let createElement = `<tr class="productDetails">
+            <td>${index+1}</td>
+            <td>${element.productCode}</td>
+            <td>${element.productName}</td>
+            <td><img src="${element.picture}" alt="" width="100" height="100"></td>
+            <td>${element.importPrice}</td>
+            <td>${element.salePrice}</td>
+            <td>${element.category}</td>
+            <td>${element.createDate}</td>
+            <td>
+                <button class="btn btn-success" onclick="readProduct('${element.picture}', '${element.productCode}', '${element.productName}', '${element.importPrice}', '${element.salePrice}', '${element.category}', '${element.createDate}')" data-bs-toggle="modal" data-bs-target="#readData"><i class='bx bx-show'></i></button>
+
+                <button class="btn btn-primary" onclick="editProduct(${index}, '${element.picture}', '${element.productCode}', '${element.productName}', '${element.importPrice}', '${element.salePrice}', '${element.category}', '${element.createDate}')" data-bs-toggle="modal" data-bs-target="#userForm"><i class='bx bxs-edit'></i></button>
+
+                <button class="btn btn-danger" onclick="deleteProduct(${index})"><i class='bx bxs-trash' ></i></button>
+            </td>
+        </tr>`;
+
+        productList.innerHTML += createElement;
+    });
+}
+
+function readProduct(pic, code, name, importP, saleP, cate, cDate) {
+    document.querySelector('.showImg').src = pic;
+    document.querySelector('#showCode').value = code; 
+    document.querySelector("#showName").value = name;
+    document.querySelector("#showImportPrice").value = importP;
+    document.querySelector("#showSalePrice").value = saleP;
+    document.querySelector("#showCategory").value = cate;
+    document.querySelector("#showCreateDate").value = cDate;
+}
+
+
+
+function editProduct(index, pic, code, name, importP, saleP, cate, cDate) {
+    isEdit = true;
+    editId = index;
+    imgInput.src = pic;
+    productCode.value = code;
+    productName.value = name;
+    importPrice.value = importP;
+    salePrice.value = saleP;
+    category.value = cate;  // This will automatically select the correct option in the dropdown
+    createDate.value = cDate;
+
+    submitBtn.innerText = "Update";
+    modalTitle.innerText = "Update The Form";
+}
+
+
+
+function deleteProduct(index){
+    if(confirm("Are you sure want to delete?")){
+        getData.splice(index, 1);
+        localStorage.setItem("productList", JSON.stringify(getData));
+        showProducts();
+    }
+}
+
+form.addEventListener('submit', (e)=> {
+    e.preventDefault();
+
+    // Tạo mã sản phẩm tự động
+    const nextProductCode = getNextProductCode();
+
+    const productInfo = {
+        picture: imgInput.src == undefined ? "./image/Product Icon.webp" : imgInput.src,
+        productCode: nextProductCode,
+        productName: productName.value,
+        importPrice: importPrice.value,
+        salePrice: salePrice.value,
+        category: category.value,
+        createDate: createDate.value
+    };
+
+    // Thêm sản phẩm vào danh sách
+    if(!isEdit){
+        getData.push(productInfo);
+    }
+    else{
+        isEdit = false;
+        getData[editId] = productInfo;
+    }
+
+    localStorage.setItem('productList', JSON.stringify(getData));
+
+    submitBtn.innerText = "Submit";
+    modalTitle.innerHTML = "Fill The Form";
+
+    showProducts();
+
+    form.reset();
+    imgInput.src = "./image/Product Icon.webp";
+});
+
+// Hàm tạo mã sản phẩm tự động
+function getNextProductCode() {
+    const lastIndex = getData.length;
+    const nextIndex = lastIndex > 0 ? lastIndex + 1 : 1;
+    const paddedIndex = String(nextIndex).padStart(3, '0'); // Định dạng số thứ tự thành chuỗi có độ dài 3 ký tự bằng cách thêm số 0 vào đầu
+    return 'sp-' + paddedIndex;
+}
+
+
+// Hàm kiểm tra và xử lý dữ liệu đầu vào chỉ chấp nhận chữ số
+function validateNumberInput(input) {
+    input.value = input.value.replace(/\D/g, ''); // Loại bỏ tất cả các ký tự không phải số
+}
