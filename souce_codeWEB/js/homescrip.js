@@ -106,87 +106,87 @@ function hideChangePasswordForm() {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.getElementById("searchInput");
-    const suggestions = document.getElementById("suggestions");
-    const employeeList = document.getElementById("employeeList").getElementsByClassName("listtable-row");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const searchInput = document.getElementById("searchInput");
+//     const suggestions = document.getElementById("suggestions");
+//     const employeeList = document.getElementById("employeeList").getElementsByClassName("listtable-row");
 
-    // Function to filter employee entries based on search input
-    function filterEmployees() {
-        const searchValue = searchInput.value.trim().toLowerCase();
-        suggestions.innerHTML = ""; // Clear previous suggestions
+//     // Function to filter employee entries based on search input
+//     function filterEmployees() {
+//         const searchValue = searchInput.value.trim().toLowerCase();
+//         suggestions.innerHTML = ""; // Clear previous suggestions
 
-        // Filter employee list
-        Array.from(employeeList).forEach(function (employee) {
-            const name = employee.getElementsByClassName("listtable-cell")[3].textContent.trim().toLowerCase(); // Get employee name
-            const id = employee.getElementsByClassName("listtable-cell")[1].textContent.trim().toLowerCase(); // Get employee ID
+//         // Filter employee list
+//         Array.from(employeeList).forEach(function (employee) {
+//             const name = employee.getElementsByClassName("listtable-cell")[3].textContent.trim().toLowerCase(); // Get employee name
+//             const id = employee.getElementsByClassName("listtable-cell")[1].textContent.trim().toLowerCase(); // Get employee ID
 
-            if (name.includes(searchValue) || id.includes(searchValue)) {
-                employee.style.display = "flex"; // Show matching entries
-            } else {
-                employee.style.display = "none"; // Hide non-matching entries
-            }
-        });
-    }
+//             if (name.includes(searchValue) || id.includes(searchValue)) {
+//                 employee.style.display = "flex"; // Show matching entries
+//             } else {
+//                 employee.style.display = "none"; // Hide non-matching entries
+//             }
+//         });
+//     }
 
-    // Function to handle click on suggestion
-    function suggestionClick(event) {
-        if (event.target.tagName === "DIV") {
-            const suggestionText = event.target.textContent;
-            const searchText = suggestionText.split(" - ")[0].trim(); // Extract ID from suggestion text
-            searchInput.value = searchText; // Set search input value to suggestion
-            filterEmployees(); // Filter employees based on suggestion
-        }
-    }
+//     // Function to handle click on suggestion
+//     function suggestionClick(event) {
+//         if (event.target.tagName === "DIV") {
+//             const suggestionText = event.target.textContent;
+//             const searchText = suggestionText.split(" - ")[0].trim(); // Extract ID from suggestion text
+//             searchInput.value = searchText; // Set search input value to suggestion
+//             filterEmployees(); // Filter employees based on suggestion
+//         }
+//     }
 
-    // Event listener for input on search box
-    searchInput.addEventListener("input", function () {
-        filterEmployees(); // Filter employees based on input
-        generateSuggestions(); // Generate suggestions when search input changes
-    });
+//     // Event listener for input on search box
+//     searchInput.addEventListener("input", function () {
+//         filterEmployees(); // Filter employees based on input
+//         generateSuggestions(); // Generate suggestions when search input changes
+//     });
 
-    // Event listener for click on suggestion
-    suggestions.addEventListener("click", suggestionClick);
+//     // Event listener for click on suggestion
+//     suggestions.addEventListener("click", suggestionClick);
 
-    // Function to generate suggestions based on search input
-    function generateSuggestions() {
-        const searchValue = searchInput.value.trim().toLowerCase();
-        suggestions.innerHTML = ""; // Clear previous suggestions
+//     // Function to generate suggestions based on search input
+//     function generateSuggestions() {
+//         const searchValue = searchInput.value.trim().toLowerCase();
+//         suggestions.innerHTML = ""; // Clear previous suggestions
 
-        let suggestionCount = 0; // Initialize suggestion count
+//         let suggestionCount = 0; // Initialize suggestion count
 
-        // Generate suggestions based on employee names and IDs
-        Array.from(employeeList).forEach(function (employee) {
-            const name = employee.getElementsByClassName("listtable-cell")[3].textContent.trim().toLowerCase(); // Get employee name
-            const id = employee.getElementsByClassName("listtable-cell")[1].textContent.trim().toLowerCase(); // Get employee ID
+//         // Generate suggestions based on employee names and IDs
+//         Array.from(employeeList).forEach(function (employee) {
+//             const name = employee.getElementsByClassName("listtable-cell")[3].textContent.trim().toLowerCase(); // Get employee name
+//             const id = employee.getElementsByClassName("listtable-cell")[1].textContent.trim().toLowerCase(); // Get employee ID
 
-            if ((name.includes(searchValue) || id.includes(searchValue)) && suggestionCount < 4) {
-                const suggestion = document.createElement("div");
-                suggestion.textContent = id + " - " + name; // Set suggestion text to employee ID - name
-                suggestions.appendChild(suggestion); // Append suggestion to suggestions
-                suggestionCount++; // Increment suggestion count
-            }
-        });
-    }
+//             if ((name.includes(searchValue) || id.includes(searchValue)) && suggestionCount < 4) {
+//                 const suggestion = document.createElement("div");
+//                 suggestion.textContent = id + " - " + name; // Set suggestion text to employee ID - name
+//                 suggestions.appendChild(suggestion); // Append suggestion to suggestions
+//                 suggestionCount++; // Increment suggestion count
+//             }
+//         });
+//     }
 
-    // Event listener for focus on search box
-    // Remove this event listener
-    // searchInput.addEventListener("focus", function () {
-    //     generateSuggestions(); // Generate suggestions when search box is focused
-    // });
+//     // Event listener for focus on search box
+//     // Remove this event listener
+//     // searchInput.addEventListener("focus", function () {
+//     //     generateSuggestions(); // Generate suggestions when search box is focused
+//     // });
 
-    // Event listener for blur on search box
-    searchInput.addEventListener("blur", function () {
-        setTimeout(function () {
-            suggestions.innerHTML = ""; // Clear suggestions when search box loses focus after a delay
-        }, 200);
-    });
+//     // Event listener for blur on search box
+//     searchInput.addEventListener("blur", function () {
+//         setTimeout(function () {
+//             suggestions.innerHTML = ""; // Clear suggestions when search box loses focus after a delay
+//         }, 200);
+//     });
 
-    // Event listener for click on search button
-    document.querySelector(".search-box button").addEventListener("click", function () {
-        filterEmployees(); // Filter employees based on search input when search button is clicked
-    });
-});
+//     // Event listener for click on search button
+//     document.querySelector(".search-box button").addEventListener("click", function () {
+//         filterEmployees(); // Filter employees based on search input when search button is clicked
+//     });
+// });
 
 
 //---------------------------------------list seller------------------------------------------//
@@ -249,10 +249,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-
-
-
-
 
 var form = document.getElementById("myForm"),
     imgInput = document.querySelector(".img"),
@@ -409,3 +405,5 @@ function getNextProductCode() {
 function validateNumberInput(input) {
     input.value = input.value.replace(/\D/g, ''); // Loại bỏ tất cả các ký tự không phải số
 }
+
+// ------------------------------------------------------------------------------------------

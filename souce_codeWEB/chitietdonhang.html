@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document</title>
+    <title>chi tiet don hang</title>
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -55,17 +55,17 @@
                             </a>
                             <ul class="list_menu">
                                 <li>
-                                    <a href="#" class="nav-link">
+                                    <a href="createaccount.html" class="nav-link">
                                         <span class="link">Tạo tài khoản nhân viên</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="listaccount.html" class="nav-link">
+                                    <a href="#" class="nav-link">
                                         <span class="link">Danh sách tài khoản</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="listseller.html" class="nav-link">
+                                    <a href="#" class="nav-link">
                                         <span class="link">Danh sách nhân viên</span>
                                     </a>
                                 </li>
@@ -124,56 +124,54 @@
             <!-- ket thuc thanh menu -->
         </nav>
         <!--ket thuc thanh menu-->
-        <div class="form_container">
-            <div class="form_title">Tạo tài khoản nhân viên</div>
-            <form id="create_account_form" action="#">
-                <div class="create_account_details">
-                    <div class="wrapper">
-                                <div class="select-btn">
-                                    <span>Chọn nhân viên</span>
-                                    <i class='bx bx-chevron-down'></i>
-                                </div>
-                                <div class="content">
-                                    <div class="search">
-                                        <i class='bx bx-search' ></i>
-                                        <input spellcheck="false" type="text" placeholder="Search">
-                                    </div>
-                                    <ul class="options"></ul>
-                                </div>
-                    </div>
-                    <div class="form_input">
-                                <span class="details">Họ:</span>
-                                <input type="text" id="ho" placeholder="Họ" required="required">
-                    </div>
-                    <div class="form_input">
-                                <span class="details">Tên:</span>
-                                <input type="text" id="ten" placeholder="Tên" required="required">
-                    </div>
-                    <div class="form_input">
-                                <span class="details">Email:</span>
-                                <input type="Email" id="email" placeholder="Email" required="required">
-                    </div>
-                    <div class="form_input">
-                                <span class="details">Số điện thoại:</span>
-                                <input type="text" id="Sdt" placeholder="Số điện thoại" required="required">
-                    </div>
-                    <div class="form_input">
-                                <span class="details">Mật khẩu:</span>
-                                <input type="text" id="password" placeholder="Mật khẩu" required="required">
-                    </div>
-                    <div class="form_button">
-                                <input type="submit" value="Tạo tài khoản">
-                    </div>
-                </div>
-            </form>
+        <div class="list_container">
+            <div class="listtable-header">
+                <h2>Chi Tiết Đơn Hàng</h2>
+            </div>
+        
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Ảnh</th>
+                            <th>Giá bán</th>
+                            <th>Số lượng</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dòng dữ liệu sẽ được thêm vào đây -->
+                        <tr>
+                            <td>iPhone 12 Pro</td>
+                            <td><img class="product-image" src="image/ip12pro.jpg" alt=""></td>
+                            <td>15,000,000 VND</td>
+                            <td>2</td>
+                            <td>30,000,000 VND</td>
+                        </tr>
+
+                        <tr>
+                            <td>iPhone 14 Pro Max</td>
+                            <td><img class="product-image" src="image/ip14prm.jpg" alt=""></td>
+                            <td>25,000,000 VND</td>
+                            <td>1</td>
+                            <td>25,000,000 VND</td>
+                        </tr>
+                        <!-- Thêm các dòng dữ liệu khác tương tự ở đây -->
+                    </tbody>
+                </table>
+            </div>
+        
+            <div>
+                <p>Tổng tiền: <span id="tong-tien">55,000,000 VND</span></p>
+                <p>Tiền khách trả: <span id="tien-khach-tra">100,000,000 VND</span></p>
+                <p>Tiền khách nhận: <span id="tien-khach-nhan">45,000,000 VND</span></p>
+            </div>
         </div>
-        <section class="overlay"></section>       
+        
+    </div>        
+        <section class="overlay"></section>
     </div>
-    <footer>
-        <div class="footer-content">
-            <h1>Web quản lí cửa hàng bán điện thoại</h1>
-            <h1>Nhóm 19- Nhóm 24</h1>
-        </div>
-    </footer>
     <script src="js/homescrip.js"></script>
+
 </body>
