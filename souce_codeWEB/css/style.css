@@ -1207,8 +1207,17 @@ div:last-child p {
 div:last-child p span {
     font-weight: bold;
 }
-
 .product-image {
     max-width: 100px; 
     height: auto;
+}
+
+
+
+
+
+.profit_bg{
+    margin-top: 100px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.3);
 }

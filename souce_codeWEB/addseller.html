@@ -40,41 +40,23 @@
 
                         <!-- them nhan vien -->
                         <li class="list">
-                            <a href="#" class="nav-link">
+                            <a href="addseller.html" class="nav-link">
                                 <i class='bx bx-user-plus icon'></i>
                                 <span class="link">Tạo mới nhân viên</span>
                             </a>
                         </li>
 
-                        <!-- quan li nhan vien -->
-                        <li class="list list_dropdown">
-                            <a href="#" class="nav-link">
-                                <i class='bx bxs-user-account icon'></i>
-                                <span class="link">Quản lí nhân viên</span>
-                                <i class='bx bx-chevron-down arrow '></i>
+                        <!-- dstk -->
+                        <li class="list">
+                            <a href="listseller.html" class="nav-link">
+                                <i class='bx bx-notepad icon'></i>
+                                <span class="link">Danh sách tài khoản</span>
                             </a>
-                            <ul class="list_menu">
-                                <li>
-                                    <a href="createaccount.html" class="nav-link">
-                                        <span class="link">Tạo tài khoản nhân viên</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="listaccount.html" class="nav-link">
-                                        <span class="link">Danh sách tài khoản</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="listseller.html" class="nav-link">
-                                        <span class="link">Danh sách nhân viên</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
                         <!-- san pham -->
                         <li class="list">
-                            <a href="listproduct.html" class="nav-link">
+                            <a href="editproduct.html" class="nav-link">
                                 <i class='bx bxs-package icon'></i>
                                 <span class="link">Danh sách sản phẩm</span>
                             </a>
@@ -90,9 +72,9 @@
 
                         <!-- loi nhuan(chi danh cho admin) -->
                         <li class="list">
-                            <a href="profit.html" class="nav-link">
+                            <a href="xulygiaodich.html" class="nav-link">
                                 <i class='bx bx-money-withdraw icon' ></i>
-                                <span class="link">Lợi nhuận</span>
+                                <span class="link">Giao dịch</span>
                             </a>
                         </li>
                     </ul>
@@ -101,18 +83,20 @@
                     <!-- sidebar bottom -->
                     <div class="bottom-content">
                         <!-- profile-ho so -->
-                        <div class="user">
-                            <div class="user_img">
-                                <img src="image/images.jpg" alt=""/>
-                            </div>
-                            <div class="username">
-                                <p class="name">Duy Huy </p>
-                            </div>
+                        <div class="list">
+                            <a href="profile.html" class="nav-link">
+                                <div class="user_img">
+                                    <img src="image/nhut.jpg" alt=""/>
+                                </div>
+                                <div class="username">
+                                    <p class="link">Nguyễn Minh Nhựt </p>
+                                </div>
+                            </a>
                         </div>
                         
                         <!-- log out -->
                         <li class="list">
-                            <a href="#" class="nav-link">
+                            <a href="login.html" class="nav-link">
                                 <i class='bx bx-log-out icon' ></i>
                                 <span class="link">Đăng xuất</span>
                             </a>
@@ -219,24 +203,16 @@
                           
                     </div>
                     <div class="form_input">
-                        <span class="details">Số điện thoại:</span>
-                        <input type="text" id="Sdt" placeholder="Số điện thoại" required="required">
-                    </div>
-                    <div class="form_input">
-                        <span class="details">Dân tộc:</span>
-                        <input type="text" id="dan_toc" placeholder="Dân tộc" required="required">
+                        <span class="details">Email:</span>
+                        <input type="text" id="email" placeholder="email" required="required">
                     </div>
                     <div class="form_input">
                         <span class="details">Ảnh:</span>
                         <input type="file" id="anh" name="anh" accept="image/*" required><br><br>
                     </div>
                     <div class="form_input">
-                        <span class="details">Địa chỉ:</span>
-                        <textarea id="dia_chi" name="dia_chi" required></textarea><br><br>
-                    </div>
-                    <div class="form_input">
-                        <span class="details">Số CCCD/CMND:</span>
-                        <input type="text" id="sothe" placeholder="CCCD/CMND" required="required">
+                        <span class="details">Mã nhân viên:</span>
+                        <input type="text" id="ma-nhanvien" name="ma_nhanvien" required><br><br>
                     </div>
                     <div class="form_button">
                         <input type="submit" value="Thêm nhân viên">
