@@ -78,12 +78,40 @@ main input{
     outline: 0;
     color: dark;
 }
+.profit {
+    background: #fff;
+    padding: 15px;
+    margin-top: 20px;
+    width: 35%;
+    border-radius: 8px;
+    position: relative; 
+    float: right;
+}
+
+.profit label {
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.profit input {
+    border: 1px solid #efecec;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.profit button {
+    background-color: #fff;
+    font-size: 24px;
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    right: 5px; 
+}
 main .date{
     display: inline-block;
     background-color: #fff;
     border-radius: 8px;
     margin-top: 1rem;
-    padding: 0.5rem 1.6rem;
 }
 /* card doanh thu */
 main .insights{
@@ -145,6 +173,10 @@ main .insights p{
 /* table */
 main .recent_order{
     margin-top: 2rem;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2rem 3rem rgba(132, 139, 200, 0.18);
 }
 main .recent_order h1{
     color: #333;
@@ -153,7 +185,6 @@ main .recent_order h1{
 main .recent_order table{
     background-color: #fff;
     padding: 1.8rem;
-    border-radius: 2rem;
     width: 100%;
     text-align: center;
     height: 400px;
@@ -170,7 +201,6 @@ main table tbody tr{
 }
 main table tbody td{
     height: 3.8rem;
-    border-bottom: 1px solid black;
 }
 main table tbody tr:last-child td{
     border: none;
@@ -256,10 +286,6 @@ main table tbody tr:nth-child(n+6) {
 .icon:hover .tooltiptext {
     visibility: visible;
   }
-.list_thongbao .card_time{
-    display: flex;
-    justify-content: space-between;
-}
 
 
 /* ----------------css inf don hang --------------- */
@@ -912,13 +938,11 @@ td button i{
 }
 
 .modal-body form {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0;
-}
+    align-items: center;
+    padding: 0;}
 
 .modal-body form .imgholder{
+    margin-left: 38%;
     width: 200px;
     height: 200px;
     position: relative;
@@ -959,9 +983,10 @@ td button i{
 }
 
 .modal-body form .inputField{
+    margin-top: 20px;
     flex-basis: 68%;
-    border-left: 2px groove black;
-    padding-left: 20px;
+    border-top: 2px groove black;
+    padding: 20px;
 }
 #category{
     width: 75%;

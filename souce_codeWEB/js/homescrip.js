@@ -20,9 +20,17 @@ overlay.addEventListener("click", ()=> {
 
 
 //-----------------------------------home---------------------------------------//
+function togglePassword() {
+    var passwordField = document.getElementById("profit");
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+    } else {
+        passwordField.type = "password";
+    }
+}
 //Giới hạn bảng(table) ở home
 document.addEventListener("DOMContentLoaded", function() {
-    const showMoreBtn = document.querySelector(".recent_order a");
+    const showMoreBtn = document.getElementById("showMoreButton");
     const closeBtn = document.querySelector(".recent_order a.close");
     const tableRows = document.querySelectorAll(".recent_order table tbody tr");
 
@@ -251,17 +259,17 @@ function editProduct(index, pic, code, name, importP, saleP, cate, cDate) {
     productName.value = name;
     importPrice.value = importP;
     salePrice.value = saleP;
-    category.value = cate;  // This will automatically select the correct option in the dropdown
+    category.value = cate;  
     createDate.value = cDate;
 
-    submitBtn.innerText = "Update";
-    modalTitle.innerText = "Update The Form";
+    submitBtn.innerText = "Cập nhật";
+    modalTitle.innerText = "Sửa thông tin sản phẩm";
 }
 
 
 
 function deleteProduct(index){
-    if(confirm("Are you sure want to delete?")){
+    if(confirm("Bạn có chắc chắn muốn xóa sản phẩm này?")){
         getData.splice(index, 1);
         localStorage.setItem("productList", JSON.stringify(getData));
         showProducts();
