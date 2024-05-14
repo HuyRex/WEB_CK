@@ -20,6 +20,15 @@ overlay.addEventListener("click", ()=> {
 
 
 //-----------------------------------home---------------------------------------//
+document.getElementById('time-filter').addEventListener('change', function() {
+    const customDateInputs = document.querySelectorAll('#custom-start, #custom-end');
+    if (this.value === 'custom') {
+        customDateInputs.forEach(input => input.style.display = 'inline');
+    } else {
+        customDateInputs.forEach(input => input.style.display = 'none');
+    }
+});
+
 function togglePassword() {
     var passwordField = document.getElementById("profit");
     if (passwordField.type === "password") {

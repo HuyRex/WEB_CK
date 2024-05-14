@@ -112,6 +112,18 @@ main .date{
     background-color: #fff;
     border-radius: 8px;
     margin-top: 1rem;
+    padding: 10px;
+}
+.date button{
+    background-color: #007bff;
+    color: #fff;
+    padding: 8.5px 14px;
+    border-radius: 8px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+.date button:hover{
+    background-color: #006adb;
 }
 /* card doanh thu */
 main .insights{

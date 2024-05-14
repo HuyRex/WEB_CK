@@ -119,14 +119,16 @@
             <h1 class="header">Doanh thu</h1>
             
             <div class="date">
-                <input type="date" id="dateInput" name="dateInput" list="dateOptions">
-                <datalist id="dateOptions">
-                <option value="<?php echo date('Y-m-d'); ?>">Hôm nay</option>
-                <option value="<?php echo date('Y-m-d', strtotime('-1 day')); ?>">Ngày hôm qua</option>
-                <option value="<?php echo date('Y-m-d', strtotime('-7 days')); ?>">Trong 7 ngày qua</option>
-                <option value="<?php echo date('Y-m'); ?>-01">Tháng này</option>
-                <!--Thêm các tùy chọn khác tại đây-->
-                </datalist>
+                <select id="time-filter">
+                    <option value="today">Hôm nay</option>
+                    <option value="yesterday">Hôm qua</option>
+                    <option value="last7days">7 Ngày qua</option>
+                    <option value="thisMonth">Tháng hiện tại</option>
+                    <option value="custom">Tùy chỉnh</option>
+                </select>
+                <input type="date" id="custom-start" style="display: none;">
+                <input type="date" id="custom-end" style="display: none;">
+                <button onclick ="loadData()"><i class='bx bx-show' ></i></button>
             </div>
             <div class="insights">
                 <!--soluong_sanpham_ban-->
